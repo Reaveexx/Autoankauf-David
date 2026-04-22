@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autoankauf David – Höchstpreis für Ihr Fahrzeug | Herxheim bei Landau</title>
+  <meta name="description" content="Auto verkaufen zum Höchstpreis. Schnell, sicher, Barzahlung. Autoankauf David in Herxheim bei Landau – 24h erreichbar. Kostenlose Abholung." />
+  <meta name="keywords" content="Autoankauf David, Auto verkaufen, Höchstpreis, Barzahlung, Herxheim, Landau, schnell, sicher, problemlos" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,600;1,700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Design Tokens ───────────────────────────────────── */
+    :root {
+      --black:       #090909;
+      --dark:        #111111;
+      --dark-2:      #181818;
+      --dark-3:      #222222;
+      --gold:        #D4AF37;
+      --gold-light:  #F5CC45;
+      --gold-dark:   #A8880A;
+      --gold-glow:   rgba(212, 175, 55, 0.25);
+      --white:       #FFFFFF;
+      --gray:        #888888;
+      --gray-light:  #CCCCCC;
+      --whatsapp:    #25D366;
+
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-luxury:  'Cormorant Garamond', serif;
+      --font-body:    'Raleway', sans-serif;
+
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+
+      --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ─── Reset ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    /* ─── Scrollbar ───────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 99px; }
+
+    /* ─── Gold Gradient Text ──────────────────────────────── */
+    .gold-text {
+      background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── Section Label ───────────────────────────────────── */
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* ─── Buttons ─────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.08);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .btn:hover::after { opacity: 1; }
+    .btn:active { transform: scale(0.98); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+      color: var(--black);
+      box-shadow: 0 4px 24px var(--gold-glow);
+    }
+    .btn-gold:hover {
+      box-shadow: 0 8px 36px rgba(212,175,55,0.45);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    }
+    .btn-whatsapp:hover {
+      box-shadow: 0 8px 36px rgba(37,211,102,0.5);
+      transform: translateY(-2px);
+    }
+
+    /* ─── Navigation ──────────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(9,9,9,0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(212,175,55,0.12);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .nav-logo-main {
+      font-family: var(--font-luxury);
+      font-style: italic;
+      font-size: 26px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+    }
+    .nav-logo-sub {
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray-light);
+      transition: var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      font-size: 11px !important;
+      padding: 10px 22px;
+    }
+
+    /* ─── Hero Section ────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse 80% 60% at 70% 50%, #1a1400 0%, var(--black) 65%);
+    }
+
+    /* Particle canvas */
+    #particle-canvas {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    /* Gold line accent */
+    .hero-line {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold-light) 60%, transparent 100%);
+      animation: lineShimmer 3s ease-in-out infinite;
+    }
+    @keyframes lineShimmer {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    .hero-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+    }
+
+    /* Left column */
+    .hero-content { 
+      position: relative; 
+      z-index: 2;
+      margin-left: -60px; /* Move text further to the edge */
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      animation: fadeSlideDown 0.8s ease both;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    .hero-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 7vw, 88px);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 8px;
+      animation: fadeSlideUp 0.8s 0.2s ease both;
+    }
+    .hero-h1 span {
+      background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 60%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-family: var(--font-luxury);
+      font-style: italic;
+      font-size: clamp(18px, 2.5vw, 26px);
+      color: var(--gray-light);
+      margin-bottom: 36px;
+      font-weight: 300;
+      animation: fadeSlideUp 0.8s 0.35s ease both;
+    }
+
+    .hero-usps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 44px;
+      animation: fadeSlideUp 0.8s 0.5s ease both;
+    }
+    .hero-usp {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray-light);
+    }
+    .hero-usp-icon {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 11px;
+      color: var(--black);
+      font-weight: 900;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeSlideUp 0.8s 0.65s ease both;
+    }
+
+    /* Right column – BMW */
+    .hero-car {
+      position: absolute;
+      right: -10%; 
+      top: 55%;
+      transform: translateY(-50%);
+      width: 58%; 
+      z-index: 1;
+      pointer-events: none;
+      animation: carDriveIn 2.2s cubic-bezier(0.19, 1, 0.22, 1) both;
+    }
+    @keyframes carDriveIn {
+      0% {
+        transform: translateY(-50%) translateX(120%) scale(0.8) rotateY(-35deg);
+        opacity: 0;
+        filter: blur(20px) brightness(0.5);
+      }
+      70% {
+        transform: translateY(-50%) translateX(-2%) scale(1.02) rotateY(-18deg);
+        opacity: 1;
+        filter: blur(0) brightness(1.2);
+      }
+      85% {
+        transform: translateY(-52%) translateX(1%) scale(0.99) rotateY(-14deg);
+      }
+      100% {
+        transform: translateY(-50%) translateX(0) scale(1) rotateY(-15deg);
+        opacity: 1;
+        filter: blur(0) brightness(1.1);
+      }
+    }
+
+    .hero-car-wrap {
+      position: relative;
+      filter: drop-shadow(-50px 30px 100px rgba(0,0,0,0.9));
+    }
+
+    /* Extra Depth Glow */
+    .hero-car-glow {
+      position: absolute;
+      bottom: 0;
+      right: 20%;
+      width: 80%;
+      height: 40%;
+      background: radial-gradient(ellipse at center, rgba(212,175,55,0.25) 0%, transparent 70%);
+      filter: blur(40px);
+      z-index: -1;
+    }
+
+    /* The car image */
+    .hero-car-img-wrap {
+      width: 100%;
+      position: relative;
+    }
+    .hero-car-img-wrap img {
+      width: 100%;
+      height: auto;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Gold corner accent */
+    .hero-car-corner {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      opacity: 0.5;
+    }
+    .hero-car-corner-tl {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border-left: 2px solid var(--gold);
+      border-top: 2px solid var(--gold);
+      opacity: 0.5;
+    }
+
+    /* Floating phone tag */
+    .hero-phone-tag {
+      position: absolute;
+      bottom: -12px;
+      left: -20px;
+      background: var(--dark-2);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: floatCard 4s ease-in-out infinite;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    .hero-phone-tag-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .hero-phone-tag-label {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      font-weight: 600;
+    }
+    .hero-phone-tag-number {
+      font-family: var(--font-display);
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    /* ─── Animations (shared) ─────────────────────────────── */
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Scroll-Animations ───────────────────────────── */
+    .reveal {
+      opacity: 0;
+      filter: blur(10px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity, filter;
+    }
+
+    /* Directional Reveals */
+    .reveal-up    { transform: translateY(50px); }
+    .reveal-down  { transform: translateY(-50px); }
+    .reveal-left  { transform: translateX(-50px); }
+    .reveal-right { transform: translateX(50px); }
+    .reveal-scale { transform: scale(0.95); }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translate(0) scale(1);
+      filter: blur(0);
+    }
+
+    /* Staggered Delays (for better flow) */
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ─── Stats Bar ───────────────────────────────────────── */
+    #stats {
+      border-top: 1px solid rgba(212,175,55,0.1);
+      border-bottom: 1px solid rgba(212,175,55,0.1);
+      background: var(--dark);
+    }
+    .stats-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 36px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(212,175,55,0.08);
+      position: relative;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 48px;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* ─── USP Section ─────────────────────────────────────── */
+    #usps {
+      padding: 120px 0;
+    }
+    .section-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 60px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--gray);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .usp-card {
+      background: var(--dark);
+      border: 1px solid rgba(212,175,55,0.08);
+      border-radius: var(--radius-lg);
+      padding: 40px 28px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .usp-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(212,175,55,0.05) 0%, transparent 60%);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .usp-card:hover { border-color: rgba(212,175,55,0.3); transform: translateY(-6px); }
+    .usp-card:hover::before { opacity: 1; }
+
+    .usp-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .usp-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .usp-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray);
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── Process Section ─────────────────────────────────── */
+    #process {
+      padding: 120px 0;
+      background: var(--dark);
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 44px;
+      left: calc(16.66% + 28px);
+      right: calc(16.66% + 28px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold-light) 50%, var(--gold-dark) 100%);
+      z-index: 0;
+    }
+    .process-step {
+      padding: 0 32px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .process-number {
+      width: 88px; height: 88px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--gold);
+      margin: 0 auto 32px;
+      background: var(--dark);
+      position: relative;
+      transition: var(--transition);
+    }
+    .process-step:hover .process-number {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: var(--black);
+      border-color: transparent;
+      box-shadow: 0 0 40px var(--gold-glow);
+    }
+    .process-icon {
+      font-size: 28px;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .process-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .process-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ─── Contact Section ─────────────────────────────────── */
+    #contact {
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(212,175,55,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .contact-left .section-title {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .contact-tagline {
+      font-family: var(--font-luxury);
+      font-style: italic;
+      font-size: 20px;
+      color: var(--gray-light);
+      margin-bottom: 48px;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 44px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      background: var(--dark);
+      border: 1px solid rgba(212,175,55,0.08);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+    .contact-item:hover {
+      border-color: rgba(212,175,55,0.25);
+      transform: translateX(4px);
+    }
+    .contact-item-icon {
+      width: 46px; height: 46px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .contact-item-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 3px;
+    }
+    .contact-item-value {
+      font-family: var(--font-display);
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    /* Contact card right */
+    .contact-card {
+      background: var(--dark);
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+    }
+    .contact-card-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .contact-card-sub {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 36px;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .form-input, .form-select {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 14px;
+      outline: none;
+      transition: var(--transition);
+      -webkit-appearance: none;
+    }
+    .form-input:focus, .form-select:focus {
+      border-color: rgba(212,175,55,0.4);
+      background: rgba(212,175,55,0.04);
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.25); }
+    .form-select option { background: var(--dark-2); color: var(--white); }
+
+    /* ─── Regional Grid (SEO) ─────────────────────────────── */
+    #regions {
+      padding: 80px 0;
+      border-top: 1px solid rgba(212,175,55,0.08);
+    }
+    .regions-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray);
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .regions-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .region-tag {
+      padding: 7px 16px;
+      border: 1px solid rgba(212,175,55,0.12);
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .region-tag:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(212,175,55,0.05);
+    }
+
+    /* ─── Footer ──────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(212,175,55,0.1);
+      padding: 60px 0 32px;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 32px;
+    }
+    .footer-brand-name {
+      font-family: var(--font-luxury);
+      font-style: italic;
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    .footer-brand-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      max-width: 300px;
+    }
+    .footer-col-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gray);
+      transition: var(--transition);
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+    }
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-legal a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+      transition: var(--transition);
+    }
+    .footer-legal a:hover { color: var(--gray); }
+
+    /* ─── Floating WhatsApp Button ────────────────────────── */
+    .float-whatsapp {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 60px;
+      height: 60px;
+      background: var(--whatsapp);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+      z-index: 900;
+      transition: var(--transition);
+      animation: bounceIn 1s 2s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .float-whatsapp:hover {
+      transform: scale(1.12);
+      box-shadow: 0 8px 40px rgba(37,211,102,0.6);
+    }
+    .float-whatsapp-pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: rgba(37,211,102,0.4);
+      animation: waPulse 2.5s ease-in-out infinite;
+    }
+    @keyframes waPulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+    @keyframes bounceIn {
+      from { transform: scale(0); opacity: 0; }
+      70% { transform: scale(1.15); }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* ─── Responsive ──────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .usp-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3), .stat-item:nth-child(4) {
+        border-top: 1px solid rgba(212,175,55,0.08);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 100px 24px 60px;
+        text-align: center;
+      }
+      .hero-usps { align-items: center; }
+      .hero-actions { justify-content: center; }
+      .hero-car { order: -1; }
+      .hero-phone-tag { display: none; }
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .process-grid::before { display: none; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-top { grid-template-columns: 1fr; gap: 36px; }
+      .usp-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .section-inner { padding: 0 24px; }
+      .nav-inner { padding: 0 24px; }
+      .footer-inner { padding: 0 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      #usps, #process, #contact { padding: 80px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Particle Canvas ──────────────────────────────────── -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- ─── Navigation ──────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-main">Autoankauf-David</span>
+      <span class="nav-logo-sub">Inh. Daoud Haidar</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#usps">Leistungen</a></li>
+      <li><a href="#process">So funktioniert's</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+      <li>
+        <a href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen." class="btn btn-gold nav-cta" target="_blank" rel="noopener">
+          Angebot einholen
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── Hero ─────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-line"></div>
+
+  <div class="hero-inner">
+    <!-- Left: Content -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Herxheim &amp; Umgebung · 24h erreichbar
+      </div>
+
+      <h1 class="hero-h1">
+        Ich kaufe<br>
+        dein Auto<br>
+        zum <span>Höchst&shy;preis</span>
+      </h1>
+
+      <p class="hero-sub">Schnell. Sicher. Problemlos.</p>
+
+      <ul class="hero-usps">
+        <li class="hero-usp">
+          <span class="hero-usp-icon">✓</span>
+          Sofortige Barzahlung oder Banküberweisung
+        </li>
+        <li class="hero-usp">
+          <span class="hero-usp-icon">✓</span>
+          Kostenlose Abholung vor Ort
+        </li>
+        <li class="hero-usp">
+          <span class="hero-usp-icon">✓</span>
+          Abwicklung innerhalb von 24 Stunden
+        </li>
+        <li class="hero-usp">
+          <span class="hero-usp-icon">✓</span>
+          Alle Marken &amp; Modelle – auch Unfallwagen
+        </li>
+      </ul>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen." class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Jetzt per WhatsApp
+        </a>
+        <a href="tel:+4917624886240" class="btn btn-outline">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 11.74a19.79 19.79 0 01-3.07-8.67A2 2 0 011.91 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Anrufen
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: BMW Car -->
+    <div class="hero-car">
+      <div class="hero-car-wrap">
+        <div class="hero-car-glow"></div>
+        <div class="hero-car-img-wrap">
+          <img src="bmw-3d.png" alt="BMW – Autoankauf David" loading="eager" />
+        </div>
+        <div class="hero-phone-tag">
+          <div class="hero-phone-tag-icon">📞</div>
+          <div>
+            <div class="hero-phone-tag-label">Direkt-Kontakt</div>
+            <div class="hero-phone-tag-number">017624886240</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Stats Bar ─────────────────────────────────────────── -->
+<div id="stats">
+  <div class="stats-inner">
+    <div class="stat-item reveal reveal-up">
+      <span class="stat-number" data-count="500">0</span>
+      <span class="stat-label">Fahrzeuge angekauft</span>
+    </div>
+    <div class="stat-item reveal reveal-up reveal-delay-1">
+      <span class="stat-number">24h</span>
+      <span class="stat-label">Schnelle Abwicklung</span>
+    </div>
+    <div class="stat-item reveal reveal-up reveal-delay-2">
+      <span class="stat-number">5.0</span>
+      <span class="stat-label">★ Kundenbewertung</span>
+    </div>
+    <div class="stat-item reveal reveal-up reveal-delay-3">
+      <span class="stat-number">100%</span>
+      <span class="stat-label">Kostenlose Abholung</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─── USP Section ───────────────────────────────────────── -->
+<section id="usps">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-label">Warum Autoankauf David?</span>
+      <h2 class="section-title">Ihr <span class="gold-text">Vorteil</span> bei uns</h2>
+      <p class="section-desc">Wir machen den Autoverkauf so einfach wie möglich – fair, transparent und ohne versteckte Gebühren.</p>
+    </div>
+
+    <div class="usp-grid">
+      <div class="usp-card reveal reveal-left">
+        <div class="usp-icon">💰</div>
+        <div class="usp-title">Best-Preis Garantie</div>
+        <p class="usp-desc">Wir bieten Ihnen garantiert den besten Marktpreis für Ihr Fahrzeug – ehrlich und transparent bewertet.</p>
+      </div>
+      <div class="usp-card reveal reveal-up reveal-delay-1">
+        <div class="usp-icon">💶</div>
+        <div class="usp-title">Sofort Barzahlung</div>
+        <p class="usp-desc">Bezahlung direkt vor Ort in bar oder per Banküberweisung – Sie wählen. Kein Warten, kein Risiko.</p>
+      </div>
+      <div class="usp-card reveal reveal-up reveal-delay-2">
+        <div class="usp-icon">🚗</div>
+        <div class="usp-title">Kostenlose Abholung</div>
+        <p class="usp-desc">Wir kommen zu Ihnen. Die komplette Abholung und Abwicklung ist für Sie vollkommen kostenlos.</p>
+      </div>
+      <div class="usp-card reveal reveal-right reveal-delay-3">
+        <div class="usp-icon">⚡</div>
+        <div class="usp-title">Abwicklung in 24h</div>
+        <p class="usp-desc">Von der ersten Anfrage bis zur Bezahlung in nur 24 Stunden. Schnell, unkompliziert, stressfrei.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Process Section ───────────────────────────────────── -->
+<section id="process">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-label">So einfach geht's</span>
+      <h2 class="section-title">In <span class="gold-text">3 Schritten</span> zum Bestpreis</h2>
+      <p class="section-desc">Kein Aufwand, keine Wartezeit. Autoverkauf so einfach wie nie zuvor.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-number">01</div>
+        <span class="process-icon">📱</span>
+        <h3 class="process-title">Kontakt aufnehmen</h3>
+        <p class="process-desc">Schreiben Sie uns einfach per WhatsApp oder rufen Sie direkt an. Teilen Sie uns Marke, Modell und Kilometerstand Ihres Fahrzeugs mit.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-number">02</div>
+        <span class="process-icon">🔍</span>
+        <h3 class="process-title">Kostenlose Besichtigung</h3>
+        <p class="process-desc">Wir kommen zu Ihnen – kostenlos und unverbindlich. Unser Experte begutachtet Ihr Fahrzeug direkt vor Ort.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-number">03</div>
+        <span class="process-icon">🤝</span>
+        <h3 class="process-title">Bezahlung &amp; Abholung</h3>
+        <p class="process-desc">Sie erhalten sofort Ihr Geld – in bar oder per Überweisung. Wir kümmern uns um alle Formalitäten und nehmen das Fahrzeug mit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Contact Section ───────────────────────────────────── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="section-label reveal">Direkter Kontakt</span>
+        <h2 class="section-title reveal" style="text-align:left; margin-bottom:16px;">
+          Wir sind <span class="gold-text">24h</span> für Sie da
+        </h2>
+        <p class="contact-tagline reveal">„Auto verkaufen war noch nie so einfach."</p>
+
+        <div class="contact-items">
+          <a href="tel:+4917624886240" class="contact-item reveal">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <div class="contact-item-label">Telefon</div>
+              <div class="contact-item-value">017624 886 240</div>
+            </div>
+          </a>
+          <a href="https://wa.me/4917624886240" class="contact-item reveal reveal-delay-1" target="_blank" rel="noopener">
+            <div class="contact-item-icon">💬</div>
+            <div>
+              <div class="contact-item-label">WhatsApp</div>
+              <div class="contact-item-value">Direkt schreiben</div>
+            </div>
+          </a>
+          <a href="mailto:autoankauf-david@outlook.de" class="contact-item reveal reveal-delay-2">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <div class="contact-item-label">E-Mail</div>
+              <div class="contact-item-value">autoankauf-david@outlook.de</div>
+            </div>
+          </a>
+          <div class="contact-item reveal reveal-delay-3">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Adresse</div>
+              <div class="contact-item-value">Sunnerwiesen 16, 76863 Herxheim</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen." class="btn btn-whatsapp reveal" target="_blank" rel="noopener">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Jetzt Angebot per WhatsApp
+        </a>
+      </div>
+
+      <!-- Quick Form -->
+      <div class="reveal reveal-delay-2">
+        <div class="contact-card">
+          <h3 class="contact-card-title">Schnell-Bewertung</h3>
+          <p class="contact-card-sub">Erhalten Sie in Minuten ein Angebot für Ihr Fahrzeug.</p>
+
+          <form class="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Marke</label>
+                <select class="form-select" required>
+                  <option value="" disabled selected>Bitte wählen</option>
+                  <option>BMW</option>
+                  <option>Mercedes-Benz</option>
+                  <option>Audi</option>
+                  <option>Volkswagen</option>
+                  <option>Ford</option>
+                  <option>Toyota</option>
+                  <option>Opel</option>
+                  <option>Seat</option>
+                  <option>Skoda</option>
+                  <option>Andere</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Modell</label>
+                <input class="form-input" type="text" placeholder="z.B. 3er, A-Klasse" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Erstzulassung</label>
+                <input class="form-input" type="text" placeholder="z.B. 2018" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Kilometerstand</label>
+                <input class="form-input" type="text" placeholder="z.B. 120.000 km" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Kraftstoff</label>
+                <select class="form-select">
+                  <option value="" disabled selected>Bitte wählen</option>
+                  <option>Benzin</option>
+                  <option>Diesel</option>
+                  <option>Hybrid</option>
+                  <option>Elektro</option>
+                  <option>LPG/Erdgas</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Telefon / WhatsApp</label>
+                <input class="form-input" type="tel" placeholder="Ihre Nummer" required />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center;">
+              Kostenloses Angebot anfordern →
+            </button>
+
+            <p style="font-size:11px; color:var(--gray); text-align:center; margin-top:8px;">
+              🔒 Ihre Daten werden verschlüsselt übertragen und nicht weitergegeben.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Regional SEO Grid ──────────────────────────────────── -->
+<section id="regions">
+  <div class="section-inner">
+    <p class="regions-title">Autoankauf in Ihrer Region</p>
+    <div class="regions-grid">
+      <span class="region-tag">Autoankauf Herxheim</span>
+      <span class="region-tag">Autoankauf Landau</span>
+      <span class="region-tag">Autoankauf Germersheim</span>
+      <span class="region-tag">Autoankauf Karlsruhe</span>
+      <span class="region-tag">Autoankauf Mannheim</span>
+      <span class="region-tag">Autoankauf Heidelberg</span>
+      <span class="region-tag">Autoankauf Ludwigshafen</span>
+      <span class="region-tag">Autoankauf Neustadt</span>
+      <span class="region-tag">Autoankauf Speyer</span>
+      <span class="region-tag">Autoankauf Wörth</span>
+      <span class="region-tag">Autoankauf Kandel</span>
+      <span class="region-tag">Autoankauf Bad Bergzabern</span>
+      <span class="region-tag">Autoankauf Südpfalz</span>
+      <span class="region-tag">Autoankauf Pfalz</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Autoankauf-David</div>
+        <p class="footer-brand-desc">Ihr zuverlässiger Partner für den schnellen und fairen Fahrzeugankauf in der Pfalz und Umgebung. 24h erreichbar – Barzahlung garantiert.</p>
+        <a href="https://wa.me/4917624886240" class="btn btn-whatsapp" style="font-size:12px; padding:10px 20px;" target="_blank" rel="noopener">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="#usps">Leistungen</a></li>
+          <li><a href="#process">Ablauf</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Kontakt</div>
+        <ul class="footer-links">
+          <li><a href="tel:+4917624886240">017624 886 240</a></li>
+          <li><a href="mailto:autoankauf-david@outlook.de">autoankauf-david@outlook.de</a></li>
+          <li>Sunnerwiesen 16</li>
+          <li>76863 Herxheim bei Landau</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Autoankauf-David · Inh. Daoud Haidar</span>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── Floating WhatsApp ────────────────────────────────── -->
+<a class="float-whatsapp" href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen." target="_blank" rel="noopener" title="WhatsApp Chat">
+  <div class="float-whatsapp-pulse"></div>
+  <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ─── JavaScript ─────────────────────────────────────────── -->
+<script>
+  /* ── Navbar scroll effect ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  /* ── Gold particle system ── */
+  (function initParticles() {
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = document.getElementById('hero').offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * W;
+        this.y = Math.random() * H;
+        this.size = Math.random() * 1.8 + 0.4;
+        this.speedX = (Math.random() - 0.5) * 0.35;
+        this.speedY = -Math.random() * 0.5 - 0.1;
+        this.opacity = Math.random() * 0.6 + 0.1;
+        this.life = 0;
+        this.maxLife = Math.random() * 300 + 200;
+        const r = Math.floor(212 + Math.random() * 43);
+        const g = Math.floor(175 + Math.random() * 50);
+        this.color = `rgb(${r},${g},55)`;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.life++;
+        const t = this.life / this.maxLife;
+        this.opacity = t < 0.1 ? t * 10 * 0.7 : t > 0.8 ? (1 - t) * 5 * 0.7 : 0.7;
+        if (this.life >= this.maxLife || this.y < 0) this.reset();
+      }
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 6;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < 80; i++) {
+      const p = new Particle();
+      p.life = Math.random() * p.maxLife;
+      particles.push(p);
+    }
+
+    function loop() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(loop);
+    }
+    loop();
+  })();
+
+  /* ── Scroll reveal ── */
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  /* ── Counter animation ── */
+  function animateCounter(el, target, suffix = '') {
+    let current = 0;
+    const step = target / 60;
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current) + suffix;
+      if (current >= target) clearInterval(timer);
+    }, 25);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const target = parseInt(el.dataset.count);
+        if (!isNaN(target)) animateCounter(el, target, '+');
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+  /* ── Parallax Car Effect ── */
+  const heroCar = document.querySelector('.hero-car img');
+  window.addEventListener('scroll', () => {
+    const scroll = window.scrollY;
+    if (scroll < 800) {
+      heroCar.style.transform = `perspective(1000px) rotateY(${-5 + scroll * 0.02}deg) translateY(${scroll * 0.1}px)`;
+    }
+  }, { passive: true });
+
+  /* ── Form submit ── */
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const brand  = e.target.querySelector('select').value;
+    const model  = e.target.querySelectorAll('input')[0].value;
+    const year   = e.target.querySelectorAll('input')[1].value;
+    const km     = e.target.querySelectorAll('input')[2].value;
+    const phone  = e.target.querySelectorAll('input')[3].value;
+    const msg = encodeURIComponent(
+      `Hallo, ich möchte mein Fahrzeug verkaufen:\n\nMarke: ${brand}\nModell: ${model}\nErstzulassung: ${year}\nKilometerstand: ${km} km\nTelefon: ${phone}`
+    );
+    window.open(`https://wa.me/4917624886240?text=${msg}`, '_blank');
+  }
+</script>
+</body>
+</html>
