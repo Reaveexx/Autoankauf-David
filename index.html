@@ -2,571 +2,155 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Autoankauf David – Auto schnell &amp; sicher verkaufen | Höchstpreis | Herxheim</title>
-<meta name="description" content="Autoankauf David in Herxheim: Ihr Auto schnell, sicher und problemlos verkaufen. Sofortige Barzahlung, kostenlose Abholung, Abwicklung innerhalb von 24 Stunden. Höchstpreis garantiert."/>
-<!-- Tailwind CSS CDN -->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Autoankauf David – Herxheim</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Custom Font Import -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
-<style data-purpose="global-typography">
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #000000;
-    color: #ffffff;
-  }
-  .text-gold  { color: #D4AF37; }
-  .bg-gold    { background-color: #D4AF37; }
-  .border-gold { border-color: #D4AF37; }
-  
-  /* Header Nav Hover Depth Effect */
-  .nav-link {
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  .nav-link:hover {
-    color: #D4AF37 !important;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.7), 0 0 40px rgba(212, 175, 55, 0.3);
-    transform: translateY(-2px);
-  }
-
-  /* Animated Scroll Arrow */
-  @keyframes flow-down-arrow {
-    0% { transform: translateY(-20px); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateY(20px); opacity: 0; }
-  }
-  .scroll-arrow-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    height: 60px;
-    position: relative;
-    opacity: 0.6;
-  }
-  .scroll-arrow-line {
-    width: 1px;
-    height: 30px;
-    background: linear-gradient(to bottom, transparent, #D4AF37);
-  }
-  .scroll-arrow-head {
-    width: 10px;
-    height: 10px;
-    border-right: 1px solid #D4AF37;
-    border-bottom: 1px solid #D4AF37;
-    transform: rotate(45deg);
-  }
-  .scroll-arrow-active {
-    animation: flow-down-arrow 2.5s infinite ease-in-out;
-  }
-</style>
-<style data-purpose="custom-gradients">
-  /* Cinematic Spotlight for Hero Section */
+<style>
+  body { font-family: 'Inter', sans-serif; background-color: #000000; color: #ffffff; }
+  .text-gold { color: #D4AF37; }
+  .bg-gold { background-color: #D4AF37; }
   .hero-gradient {
-    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.8) 100%),
-                linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 20%, transparent 70%, #0a0a0a 100%);
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.4) 60%, #000 100%),
+                linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 50%, #0a0a0a 100%);
   }
-  /* Subtle Zoom Animation */
-  @keyframes hero-zoom {
-    from { transform: scale(1.05); }
-    to { transform: scale(1); }
-  }
-  .hero-image-animate {
-    animation: hero-zoom 10s ease-out forwards;
-  }
-  /* Spotlight effect for contact card */
-  .contact-card {
-    background: linear-gradient(145deg, #0a0a0a, #111111);
-    border: 1px solid rgba(212,175,55,0.1);
-  }
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @keyframes hero-zoom { from { transform: scale(1.1); } to { transform: scale(1); } }
+  .hero-animate { animation: hero-zoom 10s ease-out forwards; }
+  .nav-blur { background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 </style>
-<style data-purpose="performance">
-  /* Lean performance - let the browser optimize naturally */
-  nav {
-    isolation: isolate;
-  }
-  #hero img {
-    backface-visibility: hidden;
-  }
-</style>
-    transition-property: transform, opacity, border-color, background-color, box-shadow !important;
-    transition-duration: 200ms !important;
-    transition-timing-function: ease !important;
-  }
-</style>
+</head>
 <body class="antialiased overflow-x-hidden">
 
-<!-- BEGIN: Navigation -->
-<nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex items-center justify-between bg-black/90">
-  <a href="#hero" class="flex items-center gap-3 group">
-    <!-- Modern Vector Logo -->
-    <div class="relative">
-      <svg class="w-10 h-10 text-gold transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M4 11h16L18 7H6l-2 4z" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M4 11v6a2 2 0 002 2h12a2 2 0 002-2v-6" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="7.5" cy="17" r="2" fill="currentColor" fill-opacity="0.2"/>
-        <circle cx="16.5" cy="17" r="2" fill="currentColor" fill-opacity="0.2"/>
-        <path d="M12 11V7" stroke-linecap="round"/>
-      </svg>
-      <div class="absolute inset-0 bg-gold/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-    </div>
+<nav class="fixed top-0 left-0 w-full z-50 px-4 py-3 flex items-center justify-between nav-blur border-b border-white/5">
+  <a href="#hero" class="flex items-center gap-2">
+    <svg class="w-8 h-8 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M4 11h16L18 7H6l-2 4zM4 11v6a2 2 0 002 2h12a2 2 0 002-2v-6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="7.5" cy="17" r="2" fill="currentColor" fill-opacity="0.2"/>
+      <circle cx="16.5" cy="17" r="2" fill="currentColor" fill-opacity="0.2"/>
+    </svg>
     <div class="flex flex-col">
-      <span class="text-gold font-black text-lg leading-none uppercase tracking-tighter">Autoankauf</span>
-      <span class="text-white font-light text-xs uppercase tracking-[0.3em] ml-[2px]">David</span>
+      <span class="text-gold font-black text-sm md:text-lg leading-none uppercase">Autoankauf</span>
+      <span class="text-white font-light text-[9px] uppercase tracking-[0.2em]">David</span>
     </div>
   </a>
-  <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-    <a class="nav-link" href="#ablauf">Ablauf</a>
-    <a class="nav-link" href="#bewertung">Bewertung</a>
-    <a class="nav-link" href="#kontakt">Kontakt</a>
-    <a href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen." target="_blank" rel="noopener">
-      <button class="bg-gold text-black px-5 py-2 rounded font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)]">
-        Jetzt Angebot
-      </button>
-    </a>
-  </div>
+  <a href="https://wa.me/4917624886240" target="_blank" class="bg-gold text-black px-4 py-2 rounded-lg font-bold text-[10px] md:text-xs uppercase shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+    Angebot
+  </a>
 </nav>
-<!-- END: Navigation -->
 
-<!-- BEGIN: HeroSection -->
-<section class="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden" id="hero">
-  <!-- Cinematic Background Layer -->
-  <div class="absolute inset-0 z-0 scale-105 pointer-events-none overflow-hidden">
-    <img alt="Premium Car" class="w-full h-full object-cover object-center opacity-100 hero-image-animate" src="Gemini_Generated_Image_2pnv62pnv62pnv62.png"/>
-    <!-- Deep Cinematic Shadow Overlays -->
+<section class="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-12" id="hero">
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <img alt="Premium Car" class="w-full h-full object-cover object-center hero-animate" src="Gemini_Generated_Image_2pnv62pnv62pnv62.png"/>
     <div class="absolute inset-0 hero-gradient"></div>
-    <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
   </div>
-  <!-- Hero Content -->
-  <div class="relative z-10 text-center max-w-4xl mx-auto" style="text-shadow: 0 4px 30px rgba(0,0,0,0.9), 0 8px 60px rgba(0,0,0,0.7)">
-    <div class="inline-block px-4 py-1 border border-gold/30 rounded-full text-[10px] uppercase tracking-[0.2em] text-gold mb-6 bg-black/40">
-      Herxheim &amp; Umgebung · Schnell – Sicher – Problemlos
+  
+  <div class="relative z-10 text-center max-w-4xl mx-auto">
+    <div class="inline-block px-3 py-1 border border-gold/30 rounded-full text-[8px] md:text-[10px] uppercase tracking-widest text-gold mb-6 bg-black/40">
+      Herxheim & Umgebung · Schnell & Sicher
     </div>
-    <h1 class="text-5xl md:text-7xl font-extrabold uppercase leading-tight tracking-tight mb-8">
+    <h1 class="text-3xl sm:text-5xl md:text-7xl font-extrabold uppercase leading-tight mb-6" style="text-shadow: 0 2px 20px #000;">
       Ihr Auto verkaufen –<br/>zum <span class="text-gold">Höchstpreis</span>
     </h1>
-    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
-      Schnell, einfach &amp; problemlos. Sofortige Barzahlung oder Banküberweisung – Abwicklung innerhalb von 24 Stunden. Kostenlose Abholung vor Ort.
+    <p class="text-gray-300 text-sm md:text-lg max-w-xl mx-auto font-light mb-10">
+      Sofortige Barzahlung – Abwicklung innerhalb von 24h. Kostenlose Bewertung vor Ort.
     </p>
-    <!-- CTA Buttons -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-      <a class="flex items-center gap-3 bg-[#25D366] text-white px-10 py-4 rounded-xl font-semibold hover:scale-105 transition-transform"
-         href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen."
-         target="_blank" rel="noopener">
-        <!-- WhatsApp SVG -->
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        Angebot via WhatsApp
+    
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a class="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded-xl font-bold shadow-lg" href="https://wa.me/4917624886240">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
       </a>
-      <a class="flex items-center gap-3 bg-black/60 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-xl font-bold hover:border-gold/50 hover:text-gold hover:scale-105 transition-all"
-         href="tel:+4917624886240">
-        <!-- Phone SVG -->
-        <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-        </svg>
-        Jetzt Anrufen
+      <a class="w-full sm:w-auto flex items-center justify-center gap-3 bg-black/60 border border-white/20 text-white px-6 py-4 rounded-xl font-bold" href="tel:+4917624886240">
+        <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        Anrufen
       </a>
     </div>
   </div>
 </section>
-<!-- END: HeroSection -->
 
-<!-- BEGIN: ProcessSection -->
-<section class="relative bg-[#0a0a0a] py-32 px-6 overflow-hidden" id="ablauf">
-  <div class="absolute inset-0 pointer-events-none" id="bg-paths-container" aria-hidden="true"></div>
-  <div class="max-w-6xl mx-auto relative z-10">
-    <div class="text-center mb-24">
-      <div class="inline-block px-4 py-1 border border-gold/30 rounded-full text-[10px] uppercase tracking-[0.3em] text-gold mb-6 bg-gold/5">
-        Einfach & Direkt
-      </div>
-      <h2 class="text-5xl md:text-6xl font-extrabold text-white uppercase tracking-tight mb-8">
-        Verkauf in <span class="text-gold">Rekordzeit</span>
-      </h2>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto font-light">
-        Vergessen Sie komplizierte Formulare. Wir setzen auf Schnelligkeit und persönlichen Kontakt – direkt via WhatsApp.
-      </p>
-    </div>
-
-    <!-- Process Steps Grid -->
-    <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
-      
-      <!-- Step 1: WhatsApp -->
-      <div class="group relative p-10 rounded-3xl bg-white/5 border border-white/10 hover:border-gold/80 hover:bg-gold/[0.1] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_60px_rgba(212,175,55,0.3)] hover:scale-[1.02]">
-        <div class="absolute -top-6 left-10 w-12 h-12 bg-gold text-black flex items-center justify-center rounded-xl font-black text-xl shadow-[0_10px_30px_rgba(212,175,55,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(212,175,55,0.8)] transition-all">1</div>
-        <div class="mb-8 p-4 inline-block rounded-2xl bg-[#25D366]/10 text-[#25D366]">
-          <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold mb-4 uppercase text-white group-hover:text-gold tracking-wide transition-colors">WhatsApp-Anfrage</h3>
-        <p class="text-gray-500 leading-relaxed text-sm">
-          Senden Sie uns einfach Fotos und Eckdaten Ihres Fahrzeugs direkt per WhatsApp. Keine Formulare, kein Warten.
-        </p>
-      </div>
-
-      <!-- Step 2: Appointment -->
-      <div class="group relative p-10 rounded-3xl bg-white/5 border border-white/10 hover:border-gold/80 hover:bg-gold/[0.1] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_60px_rgba(212,175,55,0.3)] hover:scale-[1.02]">
-        <div class="absolute -top-6 left-10 w-12 h-12 bg-gold text-black flex items-center justify-center rounded-xl font-black text-xl shadow-[0_10px_30px_rgba(212,175,55,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(212,175,55,0.8)] transition-all">2</div>
-        <div class="mb-8 p-4 inline-block rounded-2xl bg-gold/10 text-gold">
-          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold mb-4 uppercase text-white group-hover:text-gold tracking-wide transition-colors">Besuch vor Ort</h3>
-        <p class="text-gray-500 leading-relaxed text-sm">
-          Kommen Sie zu unserem Standort in Herxheim. Wir bewerten Ihr Fahrzeug direkt vor Ort – schnell, fair und völlig unverbindlich.
-        </p>
-      </div>
-
-      <!-- Step 3: Cash -->
-      <div class="group relative p-10 rounded-3xl bg-white/5 border border-white/10 hover:border-gold/80 hover:bg-gold/[0.1] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_60px_rgba(212,175,55,0.3)] hover:scale-[1.02]">
-        <div class="absolute -top-6 left-10 w-12 h-12 bg-gold text-black flex items-center justify-center rounded-xl font-black text-xl shadow-[0_10px_30px_rgba(212,175,55,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(212,175,55,0.8)] transition-all">3</div>
-        <div class="mb-8 p-4 inline-block rounded-2xl bg-gold/10 text-gold">
-          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75" />
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold mb-4 uppercase text-white group-hover:text-gold tracking-wide transition-colors">Sofortige Zahlung</h3>
-        <p class="text-gray-500 leading-relaxed text-sm">
-          Kaufvertrag vor Ort, sofortige Barzahlung oder Echtzeit-Überweisung. Wir kümmern uns um alle Formalitäten.
-        </p>
-      </div>
-    </div>
+<section class="bg-[#0a0a0a] py-16 px-6" id="ablauf">
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-2xl md:text-5xl font-extrabold uppercase mb-4">Verkauf in <span class="text-gold">Rekordzeit</span></h2>
+    <p class="text-gray-400 text-xs md:text-lg">Schnell und persönlich direkt via WhatsApp.</p>
   </div>
-  
-  <!-- Floating Scroll Arrow (Doesn't break background paths) -->
-  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 scroll-arrow-active">
-    <div class="scroll-arrow-container">
-      <div class="scroll-arrow-line"></div>
-      <div class="scroll-arrow-head"></div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="reveal p-6 rounded-2xl bg-white/5 border border-white/10">
+      <div class="text-gold font-bold mb-2">1. WhatsApp</div>
+      <p class="text-gray-400 text-xs">Senden Sie uns einfach Fotos und Eckdaten Ihres Fahrzeugs.</p>
+    </div>
+    <div class="reveal p-6 rounded-2xl bg-white/5 border border-white/10" style="transition-delay: 100ms">
+      <div class="text-gold font-bold mb-2">2. Besuch</div>
+      <p class="text-gray-400 text-xs">Kommen Sie zu uns nach Herxheim zur Bewertung.</p>
+    </div>
+    <div class="reveal p-6 rounded-2xl bg-white/5 border border-white/10" style="transition-delay: 200ms">
+      <div class="text-gold font-bold mb-2">3. Zahlung</div>
+      <p class="text-gray-400 text-xs">Sofortige Barzahlung oder Echtzeit-Überweisung vor Ort.</p>
     </div>
   </div>
 </section>
-<!-- END: ProcessSection -->
 
-<!-- BEGIN: ContactSection -->
-<section class="relative bg-[#0a0a0a] py-24 px-6 overflow-hidden" id="kontakt">
-  <div class="absolute inset-0 pointer-events-none" id="bg-paths-container-2" aria-hidden="true"></div>
-  <div class="max-w-6xl mx-auto">
-    <div class="contact-card rounded-3xl p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12">
-
-      <!-- Contact Info -->
-      <div class="w-full lg:w-1/2">
-        <span class="text-gold uppercase tracking-[0.2em] text-[10px] font-bold">Direktkontakt</span>
-        <h2 class="text-4xl md:text-5xl font-extrabold text-white mt-4 mb-12 leading-tight">
-          Auto verkaufen –<br/>schnell &amp; unkompliziert
-        </h2>
-        <div class="space-y-8">
-
-          <!-- Phone -->
-          <a href="tel:+4917624886240" class="flex items-center gap-6 group">
-            <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/40 transition-colors">
-              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-              </svg>
-            </div>
-            <div>
-              <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Telefon</p>
-              <p class="text-lg font-medium text-white">017624 886 240</p>
-            </div>
-          </a>
-
-          <!-- Email -->
-          <a href="mailto:autoankauf-david@outlook.de" class="flex items-center gap-6 group">
-            <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/40 transition-colors">
-              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-              </svg>
-            </div>
-            <div>
-              <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Email</p>
-              <p class="text-lg font-medium text-white">autoankauf-david@outlook.de</p>
-            </div>
-          </a>
-
-          <!-- Address -->
-          <a href="https://www.google.com/maps/search/?api=1&query=Sunnerwiesen+16+76863+Herxheim" target="_blank" rel="noopener" class="flex items-center gap-6 group">
-            <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/40 transition-colors">
-              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-              </svg>
-            </div>
-            <div>
-              <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Adresse</p>
-              <p class="text-lg font-medium text-white">Sunnerwiesen 16, 76863 Herxheim</p>
-            </div>
-          </a>
-
-        </div>
+<section class="bg-[#0a0a0a] py-16 px-6" id="kontakt">
+  <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
+    <div class="w-full lg:w-1/2">
+      <h2 class="text-2xl md:text-4xl font-extrabold mb-8">Kontakt</h2>
+      <div class="space-y-4">
+        <a href="tel:+4917624886240" class="flex items-center gap-4 text-sm"><span class="text-gold">📞</span> 017624 886 240</a>
+        <a href="mailto:autoankauf-david@outlook.de" class="flex items-center gap-4 text-sm"><span class="text-gold">✉️</span> autoankauf-david@outlook.de</a>
+        <a href="https://maps.google.com/?q=Sunnerwiesen+16+76863+Herxheim" class="flex items-center gap-4 text-sm"><span class="text-gold">📍</span> Sunnerwiesen 16, Herxheim</a>
       </div>
-
-      <!-- Quick Evaluation Form -->
-      <div class="w-full lg:w-1/2" id="bewertung">
-        <div class="relative rounded-2xl overflow-hidden border border-white/5 bg-[#111111] transition-all duration-[700ms] cubic-bezier(0.23, 1, 0.32, 1) hover:scale-[1.01] hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(212,175,55,0.08)] hover:border-gold/20" style="border-top: 3px solid #D4AF37;">
-          <div class="p-8">
-            <h3 class="text-2xl font-extrabold text-white uppercase tracking-wide mb-1">Schnell-Bewertung</h3>
-            <p class="text-xs text-gray-500 mb-6">Erhalten Sie in Minuten ein Angebot für Ihr Fahrzeug.</p>
-
-            <form class="space-y-4" onsubmit="handleFormSubmit(event)">
-              <div class="grid grid-cols-2 gap-4">
-                <div class="flex flex-col gap-1">
-                  <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Marke</label>
-                  <select class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors" style="-webkit-appearance:none; appearance:none; background-color: rgba(255,255,255,0.04);" required>
-                    <option value="" disabled selected>Bitte wählen</option>
-                    <option>BMW</option>
-                    <option>Mercedes-Benz</option>
-                    <option>Audi</option>
-                    <option>Volkswagen</option>
-                    <option>Ford</option>
-                    <option>Toyota</option>
-                    <option>Opel</option>
-                    <option>Seat</option>
-                    <option>Skoda</option>
-                    <option>Andere</option>
-                  </select>
-                </div>
-                <div class="flex flex-col gap-1">
-                  <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Modell</label>
-                  <input class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="text" placeholder="z.B. 3er, A-Klasse" required />
-                </div>
-              </div>
-
-              <div class="grid grid-cols-2 gap-4">
-                <div class="flex flex-col gap-1">
-                  <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Erstzulassung</label>
-                  <input name="year" class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="z.B. 2018" required />
-                </div>
-                <div class="flex flex-col gap-1">
-                  <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Kilometerstand</label>
-                  <input name="km" class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="z.B. 120000" required />
-                </div>
-              </div>
-
-              <div class="grid grid-cols-2 gap-4">
-                <div class="flex flex-col gap-1">
-                  <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Kraftstoff</label>
-                  <select class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors" style="-webkit-appearance:none; appearance:none; background-color: rgba(255,255,255,0.04);">
-                    <option value="" disabled selected>Bitte wählen</option>
-                    <option>Benzin</option>
-                    <option>Diesel</option>
-                    <option>Hybrid</option>
-                    <option>Elektro</option>
-                    <option>LPG/Erdgas</option>
-                  </select>
-                </div>
-                <div class="flex flex-col gap-1">
-                  <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Telefon / WhatsApp</label>
-                  <input name="phone" class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="tel" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" placeholder="z.B. +49..." required />
-                </div>
-              </div>
-
-              <!-- Anti-Spam (Honeypot & Dynamic Captcha) -->
-              <input type="text" name="hp_field" style="display:none !important" tabindex="-1" autocomplete="off">
-              <div class="flex flex-col gap-1 pt-2">
-                <label class="text-[10px] font-bold tracking-widest uppercase text-gold" id="captcha-label">Spamschutz: Berechne...</label>
-                <input name="captcha_ans" id="captcha-input" class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="text" placeholder="Ihre Antwort" required />
-              </div>
-
-              <button type="submit" class="w-full bg-gold text-black font-bold text-sm uppercase tracking-widest py-4 rounded hover:opacity-90 active:scale-[0.98] transition-all" style="background: linear-gradient(135deg, #A8880A, #F5CC45);">
-                Kostenloses Angebot anfordern →
-              </button>
-
-              <p class="text-[11px] text-gray-600 text-center">🔒 Ihre Daten werden verschlüsselt übertragen und nicht weitergegeben.</p>
-            </form>
-          </div>
+    </div>
+    <div class="w-full lg:w-1/2 bg-[#111] p-6 rounded-2xl border border-white/5" id="bewertung">
+      <h3 class="text-lg font-bold mb-4 uppercase">Schnell-Bewertung</h3>
+      <form class="space-y-3" onsubmit="handleFormSubmit(event)">
+        <div class="grid grid-cols-2 gap-3">
+          <input class="bg-white/5 border border-white/10 rounded-lg p-3 text-xs" placeholder="Marke" required/>
+          <input class="bg-white/5 border border-white/10 rounded-lg p-3 text-xs" placeholder="Modell" required/>
         </div>
-      </div>
-
+        <div class="grid grid-cols-2 gap-3">
+          <input class="bg-white/5 border border-white/10 rounded-lg p-3 text-xs" inputmode="numeric" placeholder="Baujahr" required/>
+          <input class="bg-white/5 border border-white/10 rounded-lg p-3 text-xs" inputmode="numeric" placeholder="KM" required/>
+        </div>
+        <input class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-xs" placeholder="Telefon" required/>
+        <div class="pt-2">
+          <label class="text-[9px] text-gold uppercase font-bold" id="captcha-label">Spamschutz...</label>
+          <input class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-xs mt-1" id="captcha-input" placeholder="Ergebnis" required/>
+        </div>
+        <button type="submit" class="w-full bg-gold text-black font-bold py-3 rounded-lg text-xs mt-2">ANGEBOT ANFORDERN</button>
+      </form>
     </div>
   </div>
 </section>
-<!-- END: ContactSection -->
 
-<style data-purpose="animations">
-  .footer-gradient {
-    background: radial-gradient(50% 100% at 50% 0%, rgba(212,175,55,0.18) 0%, transparent 100%);
-  }
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-
-<!-- BEGIN: Footer -->
-<footer class="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center rounded-t-[3rem] md:rounded-t-[4rem] footer-gradient px-6 py-16 lg:py-20">
-  <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-t-[3rem] md:rounded-t-[4rem]" id="bg-paths-container-3" aria-hidden="true"></div>
-  
-  <!-- Optimized Atmospheric Lighting -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-24 bg-gold/20 blur-[80px] pointer-events-none"></div>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-px w-1/3 bg-gold/50 blur-[2px] rounded-full"></div>
-
-  <div class="grid w-full gap-12 xl:grid-cols-3 xl:gap-8 relative z-10">
-    <!-- Brand / Copyright -->
-    <div class="reveal space-y-6 text-center xl:text-left" data-delay="0">
-      <div class="text-gold font-bold text-2xl uppercase tracking-tighter">Autoankauf David</div>
-      <p class="text-gray-500 text-sm">
-        © 2026 Autoankauf David.<br/>Alle Rechte vorbehalten. Inh. Daoud Haidar
-      </p>
-    </div>
-
-    <!-- Links Grid -->
-    <div class="grid grid-cols-2 gap-8 md:grid-cols-3 xl:col-span-2">
-      <!-- Section 1 -->
-      <div class="reveal" data-delay="100">
-        <h3 class="text-xs font-bold uppercase tracking-widest text-white mb-6">Leistungen</h3>
-        <ul class="text-gray-500 space-y-3 text-sm">
-          <li><a class="hover:text-gold transition-colors" href="#vorteile">Ihre Vorteile</a></li>
-          <li><a class="hover:text-gold transition-colors" href="#ablauf">Ankauf-Ablauf</a></li>
-          <li><a class="hover:text-gold transition-colors" href="#bewertung">Bewertung</a></li>
-          <li><a class="hover:text-gold transition-colors" href="#kontakt">Auto verkaufen</a></li>
-        </ul>
-      </div>
-
-      <!-- Section 2 -->
-      <div class="reveal" data-delay="200">
-        <h3 class="text-xs font-bold uppercase tracking-widest text-white mb-6">Rechtliches</h3>
-        <ul class="text-gray-500 space-y-3 text-sm">
-          <li><a class="hover:text-gold transition-colors" href="#">Impressum</a></li>
-          <li><a class="hover:text-gold transition-colors" href="#">Datenschutz</a></li>
-          <li><a class="hover:text-gold transition-colors" href="#">AGB</a></li>
-        </ul>
-      </div>
-
-      <!-- Section 3 -->
-      <div class="reveal" data-delay="300">
-        <h3 class="text-xs font-bold uppercase tracking-widest text-white mb-6">Kontakt</h3>
-        <ul class="text-gray-500 space-y-3 text-sm">
-          <li><a class="hover:text-gold transition-colors" href="tel:+4917624886240">017624 886 240</a></li>
-          <li><a class="hover:text-gold transition-colors" href="mailto:autoankauf-david@outlook.de">E-Mail schreiben</a></li>
-          <li><a class="hover:text-gold transition-colors" href="https://www.google.com/maps/search/?api=1&query=Sunnerwiesen+16+76863+Herxheim" target="_blank" rel="noopener">Sunnerwiesen 16, Herxheim</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<footer class="bg-black py-10 px-6 border-t border-white/5 text-center">
+  <div class="text-gold font-bold text-sm mb-2 uppercase">Autoankauf David</div>
+  <p class="text-gray-600 text-[9px]">© 2026 Autoankauf David · Inh. Daoud Haidar</p>
 </footer>
-<!-- END: Footer -->
 
 <script>
-(function() {
-  // Intersection Observer for Reveal Animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
+  // Reveal Animations
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.getAttribute('data-delay') || 0;
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, delay);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  const ns = 'http://www.w3.org/2000/svg';
-
-  function buildSVG(position, viewBoxY) {
-    const svg = document.createElementNS(ns, 'svg');
-    svg.setAttribute('viewBox', `0 ${viewBoxY} 696 900`);
-    svg.setAttribute('fill', 'none');
-    svg.setAttribute('preserveAspectRatio', 'none');
-    svg.style.cssText = 'position:absolute;inset:0;width:100%;height:100%';
-
-    for (let i = 0; i < 6; i++) {
-      const idx = i * 4;
-      const p = position;
-      // Segment 1+2: oberer S-Bogen
-      // Segment 3+4: Verlängerung und finaler Schwung in den Footer
-      const d = `M${-380 - idx*5*p} ${-189 + idx*6} ` +
-                `C${-380 - idx*5*p} ${-189 + idx*6} ${-312 - idx*5*p} ${216 - idx*6} ${152 - idx*5*p} ${343 - idx*6} ` +
-                `C${616 - idx*5*p} ${470 - idx*6} ${684 - idx*5*p} ${875 - idx*6} ${684 - idx*5*p} ${875 - idx*6} ` +
-                `C${684 - idx*5*p} ${1050 - idx*6} ${150 - idx*4*p} ${1450 - idx*6} ${-100 - idx*3*p} ${1850 - idx*6} ` +
-                `C${-200} ${2100} ${-300} ${2400} ${-400} ${2700}`;
-      const path = document.createElementNS(ns, 'path');
-      path.setAttribute('d', d);
-      path.setAttribute('stroke', '#D4AF37');
-      path.setAttribute('stroke-width', String(0.5 + i * 0.08));
-      path.setAttribute('stroke-opacity', String(0.06 + i * 0.012));
-      svg.appendChild(path);
-    }
-    return svg;
-  }
-
-  // Prozesssektion: zeigt obere Hälfte der Kurven (y: -200 → 700)
-  const c1 = document.getElementById('bg-paths-container');
-  if (c1) {
-    c1.appendChild(buildSVG(1, -200));
-    c1.appendChild(buildSVG(-1, -200));
-  }
-
-  // Kontaktsektion: zeigt untere Hälfte (Fortsetzung ab y: 700 → 1600)
-  const c2 = document.getElementById('bg-paths-container-2');
-  if (c2) {
-    c2.appendChild(buildSVG(1, 700));
-    c2.appendChild(buildSVG(-1, 700));
-  }
-
-  // Footer: zeigt das Ende der Kurven (y: 1550 → 2450) – exakter Anschluss an die Kontaktsektion
-  const c3 = document.getElementById('bg-paths-container-3');
-  if (c3) {
-    c3.appendChild(buildSVG(1, 1550));
-    c3.appendChild(buildSVG(-1, 1550));
-  }
-})();
-
-  // Dynamic Captcha Setup
+  // Captcha
   let captchaResult = 0;
   function setupCaptcha() {
     const n1 = Math.floor(Math.random() * 9) + 1;
     const n2 = Math.floor(Math.random() * 9) + 1;
     captchaResult = n1 + n2;
-    const label = document.getElementById('captcha-label');
-    if (label) label.innerText = `Spamschutz: Was ist ${n1} + ${n2}?`;
+    document.getElementById('captcha-label').innerText = `Spamschutz: Was ist ${n1} + ${n2}?`;
   }
   setupCaptcha();
 
-  /* Form → WhatsApp */
   function handleFormSubmit(e) {
     e.preventDefault();
-    const form   = e.target;
-    
-    // Anti-Spam Check
-    const hp = form.querySelector('input[name="hp_field"]').value;
-    const captchaVal = form.querySelector('input[name="captcha_ans"]').value;
-    
-    if (hp) return; // Honeypot triggered
-    if (parseInt(captchaVal) !== captchaResult) {
-      alert(`Spamschutz: Bitte das Ergebnis korrekt eingeben.`);
-      setupCaptcha(); // Reset for retry
-      return;
-    }
-
-    const selects = form.querySelectorAll('select');
-    const inputs  = form.querySelectorAll('input');
-    const brand  = selects[0].value;
-    const fuel   = selects[1].value;
-    const model  = inputs[0].value;
-    const year   = inputs[1].value;
-    const km     = inputs[2].value;
-    const phone  = inputs[3].value;
-    const msg = encodeURIComponent(
-      `Hallo, ich möchte mein Fahrzeug verkaufen:\n\nMarke: ${brand}\nModell: ${model}\nErstzulassung: ${year}\nKilometerstand: ${km} km\nKraftstoff: ${fuel}\nTelefon: ${phone}`
-    );
+    const val = document.getElementById('captcha-input').value;
+    if (parseInt(val) !== captchaResult) { alert('Falsches Ergebnis'); setupCaptcha(); return; }
+    const i = e.target.querySelectorAll('input');
+    const msg = encodeURIComponent(`Anfrage: ${i[0].value} ${i[1].value}, Bj: ${i[2].value}, KM: ${i[3].value}, Tel: ${i[4].value}`);
     window.open(`https://wa.me/4917624886240?text=${msg}`, '_blank');
   }
 </script>
