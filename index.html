@@ -398,7 +398,7 @@
               <div class="grid grid-cols-2 gap-4">
                 <div class="flex flex-col gap-1">
                   <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Marke</label>
-                  <select class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors" style="-webkit-appearance:none; appearance:none; background-color: rgba(255,255,255,0.04);" required>
+                  <select name="brand" class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors" style="-webkit-appearance:none; appearance:none; background-color: rgba(255,255,255,0.04);" required>
                     <option value="" disabled selected>Bitte wählen</option>
                     <option>BMW</option>
                     <option>Mercedes-Benz</option>
@@ -414,7 +414,7 @@
                 </div>
                 <div class="flex flex-col gap-1">
                   <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Modell</label>
-                  <input class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="text" placeholder="z.B. 3er, A-Klasse" required />
+                  <input name="model" class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="text" placeholder="z.B. 3er, A-Klasse" required />
                 </div>
               </div>
 
@@ -425,14 +425,14 @@
                 </div>
                 <div class="flex flex-col gap-1">
                   <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Kilometerstand</label>
-                  <input name="km" class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="z.B. 120000" required />
+                  <input name="km" class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="text" inputmode="numeric" oninput="formatThousands(this)" placeholder="z.B. 120.000" required />
                 </div>
               </div>
 
               <div class="grid grid-cols-2 gap-4">
                 <div class="flex flex-col gap-1">
                   <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Kraftstoff</label>
-                  <select class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors" style="-webkit-appearance:none; appearance:none; background-color: rgba(255,255,255,0.04);">
+                  <select name="fuel" class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors" style="-webkit-appearance:none; appearance:none; background-color: rgba(255,255,255,0.04);" required>
                     <option value="" disabled selected>Bitte wählen</option>
                     <option>Benzin</option>
                     <option>Diesel</option>
@@ -442,8 +442,11 @@
                   </select>
                 </div>
                 <div class="flex flex-col gap-1">
-                  <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Telefon / WhatsApp</label>
-                  <input name="phone" class="bg-white/5 border border-white/10 rounded px-3 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="tel" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" placeholder="z.B. +49..." required />
+                  <label class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Preisvorstellung</label>
+                  <div class="relative">
+                    <input name="price" class="w-full bg-white/5 border border-white/10 rounded px-3 pr-8 py-3 text-white text-sm outline-none focus:border-gold/40 focus:bg-gold/5 transition-colors placeholder-white/25" type="text" inputmode="numeric" oninput="formatThousands(this)" placeholder="z.B. 5.000" required />
+                    <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none select-none">€</span>
+                  </div>
                 </div>
               </div>
 
@@ -468,6 +471,115 @@
   </div>
 </section>
 <!-- END: ContactSection -->
+
+<!-- BEGIN: RegionalSEO -->
+<section class="relative w-full bg-[#0a0a0a] py-20 px-4 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" id="bg-paths-container-region" aria-hidden="true"></div>
+  <div class="relative max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-3">Autoankauf in <span style="color:#D4AF37">Ihrer Region</span></h2>
+    <p class="text-gray-400 text-base mb-10 max-w-2xl">Wir kaufen Ihr Fahrzeug in der gesamten Region – schnell, fair und unkompliziert. Finden Sie Ihren nächsten Standort:</p>
+
+    <div id="region-accordion" class="flex flex-col gap-0">
+
+      <!-- Rheinland-Pfalz -->
+      <div class="region-item border-t border-white/10">
+        <button class="region-toggle w-full flex items-center justify-between py-5 text-left group" onclick="toggleRegion(this)">
+          <span class="text-white font-bold text-lg group-hover:text-gold transition-colors duration-200">Rheinland-Pfalz</span>
+          <span class="region-icon text-gold text-2xl font-light transition-transform duration-300">+</span>
+        </button>
+        <div class="region-panel overflow-hidden max-h-0 transition-all duration-500" style="transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);">
+          <div class="pb-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            <a href="#bewertung" class="region-city">Herxheim</a>
+            <a href="#bewertung" class="region-city">Landau</a>
+            <a href="#bewertung" class="region-city">Speyer</a>
+            <a href="#bewertung" class="region-city">Germersheim</a>
+            <a href="#bewertung" class="region-city">Ludwigshafen</a>
+            <a href="#bewertung" class="region-city">Neustadt a.d.W.</a>
+            <a href="#bewertung" class="region-city">Kaiserslautern</a>
+            <a href="#bewertung" class="region-city">Worms</a>
+            <a href="#bewertung" class="region-city">Mainz</a>
+            <a href="#bewertung" class="region-city">Koblenz</a>
+            <a href="#bewertung" class="region-city">Trier</a>
+            <a href="#bewertung" class="region-city">Pirmasens</a>
+            <a href="#bewertung" class="region-city">Zweibrücken</a>
+            <a href="#bewertung" class="region-city">Frankenthal</a>
+            <a href="#bewertung" class="region-city">Bad Dürkheim</a>
+            <a href="#bewertung" class="region-city">Wörth am Rhein</a>
+            <a href="#bewertung" class="region-city">Ingelheim</a>
+            <a href="#bewertung" class="region-city">Bingen</a>
+            <a href="#bewertung" class="region-city">Idar-Oberstein</a>
+            <a href="#bewertung" class="region-city">Bitburg</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Baden-Württemberg -->
+      <div class="region-item border-t border-b border-white/10">
+        <button class="region-toggle w-full flex items-center justify-between py-5 text-left group" onclick="toggleRegion(this)">
+          <span class="text-white font-bold text-lg group-hover:text-gold transition-colors duration-200">Baden-Württemberg</span>
+          <span class="region-icon text-gold text-2xl font-light transition-transform duration-300">+</span>
+        </button>
+        <div class="region-panel overflow-hidden max-h-0 transition-all duration-500" style="transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);">
+          <div class="pb-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            <a href="#bewertung" class="region-city">Karlsruhe</a>
+            <a href="#bewertung" class="region-city">Mannheim</a>
+            <a href="#bewertung" class="region-city">Heidelberg</a>
+            <a href="#bewertung" class="region-city">Stuttgart</a>
+            <a href="#bewertung" class="region-city">Bruchsal</a>
+            <a href="#bewertung" class="region-city">Rastatt</a>
+            <a href="#bewertung" class="region-city">Baden-Baden</a>
+            <a href="#bewertung" class="region-city">Pforzheim</a>
+            <a href="#bewertung" class="region-city">Heilbronn</a>
+            <a href="#bewertung" class="region-city">Bretten</a>
+            <a href="#bewertung" class="region-city">Ettlingen</a>
+            <a href="#bewertung" class="region-city">Schwetzingen</a>
+            <a href="#bewertung" class="region-city">Wiesloch</a>
+            <a href="#bewertung" class="region-city">Sinsheim</a>
+            <a href="#bewertung" class="region-city">Freiburg</a>
+            <a href="#bewertung" class="region-city">Offenburg</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+<!-- END: RegionalSEO -->
+
+<style data-purpose="region-seo">
+  .region-city {
+    display: block;
+    color: #9ca3af;
+    font-size: 0.875rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    text-decoration: none;
+  }
+  .region-city:hover {
+    color: #D4AF37;
+    border-color: rgba(212,175,55,0.3);
+    background: rgba(212,175,55,0.05);
+  }
+  .region-panel.open {
+    max-height: 500px !important;
+  }
+  .region-item .region-icon.open {
+    transform: rotate(45deg);
+  }
+</style>
+
+<script>
+  function toggleRegion(btn) {
+    var panel = btn.nextElementSibling;
+    var icon = btn.querySelector('.region-icon');
+    var isOpen = panel.classList.contains('open');
+    panel.classList.toggle('open', !isOpen);
+    icon.classList.toggle('open', !isOpen);
+  }
+</script>
 
 <style data-purpose="animations">
   .footer-gradient {
@@ -644,13 +756,16 @@
     for (let i = 0; i < 6; i++) {
       const idx = i * 4;
       const p = position;
-      // Segment 1+2: oberer S-Bogen
-      // Segment 3+4: Verlängerung und finaler Schwung in den Footer
+      // Seg1+2: Prozess-/Kontaktsektion (unverändert)
+      // Seg3:   Linie läuft nach links (Tiefpunkt bei y≈1850)
+      // Seg4:   Rechtsschwung – sichtbar in Regional-Sektion (L→R)
+      // Seg5:   Footer-Fortsetzung
       const d = `M${-380 - idx*5*p} ${-189 + idx*6} ` +
                 `C${-380 - idx*5*p} ${-189 + idx*6} ${-312 - idx*5*p} ${216 - idx*6} ${152 - idx*5*p} ${343 - idx*6} ` +
                 `C${616 - idx*5*p} ${470 - idx*6} ${684 - idx*5*p} ${875 - idx*6} ${684 - idx*5*p} ${875 - idx*6} ` +
                 `C${684 - idx*5*p} ${1050 - idx*6} ${150 - idx*4*p} ${1450 - idx*6} ${-100 - idx*3*p} ${1850 - idx*6} ` +
-                `C${-200} ${2100} ${-300} ${2400} ${-400} ${2700}`;
+                `C${-280 - idx*2*p} ${1980 - idx*4} ${180 - idx*2*p} ${2280 - idx*4} ${720 - idx*2*p} ${2480 - idx*4} ` +
+                `C${900 - idx*p} ${2580} ${1050 - idx*p} ${2680} ${1200} ${2800}`;
       const path = document.createElementNS(ns, 'path');
       path.setAttribute('d', d);
       path.setAttribute('stroke', '#D4AF37');
@@ -661,25 +776,32 @@
     return svg;
   }
 
-  // Prozesssektion: zeigt obere Hälfte der Kurven (y: -200 → 700)
+  // Prozesssektion: Seg1+2, oberer S-Bogen (y: -200 → 700)
   const c1 = document.getElementById('bg-paths-container');
   if (c1) {
     c1.appendChild(buildSVG(1, -200));
     c1.appendChild(buildSVG(-1, -200));
   }
 
-  // Kontaktsektion: zeigt untere Hälfte (Fortsetzung ab y: 700 → 1600)
+  // Kontaktsektion: Seg2+3, Bogen rechts → zurück links (y: 700 → 1600)
   const c2 = document.getElementById('bg-paths-container-2');
   if (c2) {
     c2.appendChild(buildSVG(1, 700));
     c2.appendChild(buildSVG(-1, 700));
   }
 
-  // Footer: zeigt das Ende der Kurven (y: 1550 → 2450) – exakter Anschluss an die Kontaktsektion
+  // Regional-Sektion: Tiefpunkt + Rechtsschwung Seg4 (y: 1530 → 2430)
+  const cr = document.getElementById('bg-paths-container-region');
+  if (cr) {
+    cr.appendChild(buildSVG(1, 1530));
+    cr.appendChild(buildSVG(-1, 1530));
+  }
+
+  // Footer: Seg5, Fortsetzung rechts (y: 2300 → 3200)
   const c3 = document.getElementById('bg-paths-container-3');
   if (c3) {
-    c3.appendChild(buildSVG(1, 1550));
-    c3.appendChild(buildSVG(-1, 1550));
+    c3.appendChild(buildSVG(1, 2300));
+    c3.appendChild(buildSVG(-1, 2300));
   }
 })();
 
@@ -715,31 +837,35 @@
   })();
 
   /* Form → WhatsApp */
+  function formatThousands(input) {
+    var raw = input.value.replace(/\D/g, '');
+    input.value = raw === '' ? '' : raw.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  }
+
   function handleFormSubmit(e) {
     e.preventDefault();
-    const form   = e.target;
-    
+    const form = e.target;
+
     // Anti-Spam Check
     const hp = form.querySelector('input[name="hp_field"]').value;
     const captchaVal = form.querySelector('input[name="captcha_ans"]').value;
-    
-    if (hp) return; // Honeypot triggered
+
+    if (hp) return;
     if (parseInt(captchaVal) !== captchaResult) {
       alert(`Spamschutz: Bitte das Ergebnis korrekt eingeben.`);
-      setupCaptcha(); // Reset for retry
+      setupCaptcha();
       return;
     }
 
-    const selects = form.querySelectorAll('select');
-    const inputs  = form.querySelectorAll('input');
-    const brand  = selects[0].value;
-    const fuel   = selects[1].value;
-    const model  = inputs[0].value;
-    const year   = inputs[1].value;
-    const km     = inputs[2].value;
-    const phone  = inputs[3].value;
+    const brand = form.elements['brand'].value;
+    const model = form.elements['model'].value;
+    const year  = form.elements['year'].value;
+    const km    = form.elements['km'].value.replace(/\./g, '');
+    const fuel  = form.elements['fuel'].value;
+    const price = form.elements['price'].value;
+
     const msg = encodeURIComponent(
-      `Hallo, ich möchte mein Fahrzeug verkaufen:\n\nMarke: ${brand}\nModell: ${model}\nErstzulassung: ${year}\nKilometerstand: ${km} km\nKraftstoff: ${fuel}\nTelefon: ${phone}`
+      `Hallo, ich möchte mein Fahrzeug verkaufen:\n\nMarke: ${brand}\nModell: ${model}\nErstzulassung: ${year}\nKilometerstand: ${km} km\nKraftstoff: ${fuel}\nPreisvorstellung: ${price} €`
     );
     window.open(`https://wa.me/4917624886240?text=${msg}`, '_blank');
   }
