@@ -5,8 +5,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Autoankauf David – Auto schnell &amp; sicher verkaufen | Höchstpreis | Herxheim</title>
 <meta name="description" content="Autoankauf David in Herxheim: Ihr Auto schnell, sicher und problemlos verkaufen. Sofortige Barzahlung, kostenlose Abholung, Abwicklung innerhalb von 24 Stunden. Höchstpreis garantiert."/>
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind CSS – lokal gehostet (keine externen CDN-Anfragen, DSGVO-konform) -->
+<link rel="stylesheet" href="tailwind.css"/>
 <!-- Keine externen Schriftarten – System-Fonts für DSGVO-Konformität -->
 <style data-purpose="global-typography">
   body {
@@ -201,7 +201,7 @@
   </a>
   <!-- Mobile-only CTA Buttons (nur auf kleinen Screens sichtbar) -->
   <div class="flex md:hidden items-center gap-2">
-    <a href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen." target="_blank" rel="noopener"
+    <a href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen." target="_blank" rel="noopener noreferrer"
        class="flex items-center gap-1.5 bg-[#25D366] text-white text-xs font-bold px-3 py-2 rounded-lg active:scale-95 transition-transform">
       <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -222,7 +222,7 @@
     <a class="nav-link" href="#ablauf">Ablauf</a>
     <a class="nav-link" href="#bewertung">Bewertung</a>
     <a class="nav-link" href="#kontakt">Kontakt</a>
-    <a href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen." target="_blank" rel="noopener">
+    <a href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen." target="_blank" rel="noopener noreferrer">
       <button class="bg-gold text-black px-5 py-2 rounded font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)]">
         Jetzt Angebot
       </button>
@@ -255,7 +255,7 @@
     <div class="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
       <a class="w-full md:w-auto flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-3.5 md:px-10 md:py-4 rounded-xl font-semibold hover:scale-105 transition-transform"
          href="https://wa.me/4917624886240?text=Hallo%2C%20ich%20m%C3%B6chte%20mein%20Auto%20verkaufen."
-         target="_blank" rel="noopener">
+         target="_blank" rel="noopener noreferrer">
         <!-- WhatsApp SVG -->
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -409,7 +409,7 @@
           </div>
 
           <!-- CTA Button -->
-          <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=162057294" target="_blank" rel="noopener"
+          <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=162057294" target="_blank" rel="noopener noreferrer"
             class="group relative inline-flex items-center gap-3 px-9 py-4 rounded-2xl font-bold text-black text-sm uppercase tracking-widest overflow-hidden transition-all duration-300 hover:scale-105"
             style="background:linear-gradient(135deg,#A8880A,#F5CC45);box-shadow:0 0 40px rgba(212,175,55,0.3);">
             <span class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -469,7 +469,7 @@
           </a>
 
           <!-- Address -->
-          <a href="https://www.google.com/maps/search/?api=1&query=Sunnerwiesen+16+76863+Herxheim" target="_blank" rel="noopener" class="flex items-center gap-6 group">
+          <a href="https://www.google.com/maps/search/?api=1&query=Sunnerwiesen+16+76863+Herxheim" target="_blank" rel="noopener noreferrer" class="flex items-center gap-6 group">
             <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/40 transition-colors">
               <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -560,7 +560,7 @@
                 Kostenloses Angebot anfordern →
               </button>
 
-              <p class="text-[11px] text-gray-600 text-center">🔒 Ihre Daten werden verschlüsselt übertragen und nicht weitergegeben.</p>
+              <p class="text-[11px] text-gray-600 text-center">🔒 Ihre Daten werden verschlüsselt übertragen und nicht weitergegeben. Mit dem Absenden stimmen Sie der Verarbeitung gemäß unserer <a class="underline hover:text-gold cursor-pointer transition-colors" onclick="openLegalModal('datenschutz')">Datenschutzerklärung</a> zu.</p>
             </form>
           </div>
         </div>
@@ -741,7 +741,7 @@
         <ul class="text-gray-500 space-y-3 text-sm">
           <li><a class="hover:text-gold transition-colors" href="tel:+4917624886240">017624 886 240</a></li>
           <li><a class="hover:text-gold transition-colors" href="mailto:autoankauf-david@outlook.de">E-Mail schreiben</a></li>
-          <li><a class="hover:text-gold transition-colors" href="https://www.google.com/maps/search/?api=1&query=Sunnerwiesen+16+76863+Herxheim" target="_blank" rel="noopener">Sunnerwiesen 16, Herxheim</a></li>
+          <li><a class="hover:text-gold transition-colors" href="https://www.google.com/maps/search/?api=1&query=Sunnerwiesen+16+76863+Herxheim" target="_blank" rel="noopener noreferrer">Sunnerwiesen 16, Herxheim</a></li>
         </ul>
       </div>
     </div>
@@ -773,7 +773,7 @@
     <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
 
     <h3>Streitschlichtung</h3>
-    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>. Wir nehmen nicht an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil.</p>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>. Wir nehmen nicht an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil.</p>
   </div>
 </div>
 
@@ -798,7 +798,7 @@
     <h3>3. Welche Daten wir verarbeiten</h3>
     <p>Diese Website erhebt keine personenbezogenen Daten automatisch. Daten entstehen nur, wenn Sie aktiv Kontakt aufnehmen:</p>
     <ul>
-      <li><strong>Schnell-Bewertungsformular / WhatsApp:</strong> Wenn Sie das Bewertungsformular absenden, werden Fahrzeugdaten (Marke, Modell, Erstzulassung, Kilometerstand, Kraftstoff, Preisvorstellung) als vorbereitete WhatsApp-Nachricht an uns übermittelt. Die Verarbeitung erfolgt auf Grundlage Ihrer freiwilligen Kontaktaufnahme (Art. 6 Abs. 1 lit. b DSGVO). Wir speichern diese Daten ausschließlich zur Bearbeitung Ihrer Anfrage. Für die anschließende Datenverarbeitung durch WhatsApp (Meta Platforms Ireland Ltd.) gilt deren Datenschutzrichtlinie: <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener">whatsapp.com/legal/privacy-policy-eea</a></li>
+      <li><strong>Schnell-Bewertungsformular / WhatsApp:</strong> Wenn Sie das Bewertungsformular absenden, werden Fahrzeugdaten (Marke, Modell, Erstzulassung, Kilometerstand, Kraftstoff, Preisvorstellung) als vorbereitete WhatsApp-Nachricht an uns übermittelt. Die Verarbeitung erfolgt auf Grundlage Ihrer freiwilligen Kontaktaufnahme (Art. 6 Abs. 1 lit. b DSGVO). Wir speichern diese Daten ausschließlich zur Bearbeitung Ihrer Anfrage. Für die anschließende Datenverarbeitung durch WhatsApp (Meta Platforms Ireland Ltd.) gilt deren Datenschutzrichtlinie: <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener noreferrer">whatsapp.com/legal/privacy-policy-eea</a></li>
       <li><strong>Telefon:</strong> Wenn Sie uns anrufen, verarbeiten wir Ihre Rufnummer und den Gesprächsinhalt zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b DSGVO).</li>
       <li><strong>E-Mail:</strong> Eingehende E-Mails werden zur Bearbeitung Ihrer Anfrage verarbeitet und nach Abschluss des Vorgangs gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen (Art. 6 Abs. 1 lit. b DSGVO).</li>
     </ul>
@@ -808,16 +808,16 @@
 
     <h3>5. Externe Dienste & Drittanbieter</h3>
 
-    <p><strong>Tailwind CSS CDN (Vercel Inc.):</strong> Zur Darstellung dieser Website werden CSS-Ressourcen von cdn.tailwindcss.com geladen. Dabei wird Ihre IP-Adresse technisch bedingt an Vercel, Inc. (440 N Barranca Ave #4133, Covina, CA 91723, USA) übertragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Vercel ist nach dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a></p>
+    <p><strong>Styling (Tailwind CSS):</strong> Die auf dieser Website verwendeten CSS-Stylesheets werden vollständig selbst gehostet und lokal ausgeliefert. Es werden keine externen CDN-Ressourcen geladen und keine Daten an Dritte übertragen.</p>
 
-    <p><strong>Kleinanzeigen.de (Adevinta Germany GmbH):</strong> Diese Website enthält einen Link zu unserem Inserate-Profil auf Kleinanzeigen.de (vormals eBay Kleinanzeigen). Betreiber ist die Kleinanzeigen GmbH, ein Unternehmen der Adevinta-Gruppe, Drehbahn 47–48, 20354 Hamburg. Wenn Sie aktiv auf diesen Link klicken und die Plattform besuchen, gelten die Datenschutzbestimmungen von Kleinanzeigen.de: <a href="https://www.kleinanzeigen.de/datenschutz" target="_blank" rel="noopener">kleinanzeigen.de/datenschutz</a>. Bis zum aktiven Klick werden keine Daten an Kleinanzeigen übertragen. Wir haben keinen Einfluss auf die Datenverarbeitung durch Kleinanzeigen.de und machen uns deren Inhalte nicht zu eigen.</p>
+    <p><strong>Kleinanzeigen.de (Adevinta Germany GmbH):</strong> Diese Website enthält einen Link zu unserem Inserate-Profil auf Kleinanzeigen.de (vormals eBay Kleinanzeigen). Betreiber ist die Kleinanzeigen GmbH, ein Unternehmen der Adevinta-Gruppe, Drehbahn 47–48, 20354 Hamburg. Wenn Sie aktiv auf diesen Link klicken und die Plattform besuchen, gelten die Datenschutzbestimmungen von Kleinanzeigen.de: <a href="https://www.kleinanzeigen.de/datenschutz" target="_blank" rel="noopener noreferrer">kleinanzeigen.de/datenschutz</a>. Bis zum aktiven Klick werden keine Daten an Kleinanzeigen übertragen. Wir haben keinen Einfluss auf die Datenverarbeitung durch Kleinanzeigen.de und machen uns deren Inhalte nicht zu eigen.</p>
 
-    <p><strong>Google Maps (nur auf Klick):</strong> Der Adress-Link öffnet Google Maps im Browser erst bei aktivem Klick. Bis dahin werden keine Daten an Google LLC übertragen. Es gilt die Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+    <p><strong>Google Maps (nur auf Klick):</strong> Der Adress-Link öffnet Google Maps im Browser erst bei aktivem Klick. Bis dahin werden keine Daten an Google LLC übertragen. Es gilt die Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
 
-    <p><strong>WhatsApp (Meta Platforms Ireland Ltd.):</strong> Die WhatsApp-Buttons auf dieser Seite öffnen beim Klick die WhatsApp-App oder Web-App mit einer vorausgefüllten Nachricht. Bis zum Klick werden keine Daten übertragen. Die Übertragung erfolgt ausschließlich auf Ihre Initiative. Datenschutzerklärung: <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener">whatsapp.com/legal/privacy-policy-eea</a></p>
+    <p><strong>WhatsApp (Meta Platforms Ireland Ltd.):</strong> Die WhatsApp-Buttons auf dieser Seite öffnen beim Klick die WhatsApp-App oder Web-App mit einer vorausgefüllten Nachricht. Bis zum Klick werden keine Daten übertragen. Die Übertragung erfolgt ausschließlich auf Ihre Initiative. Datenschutzerklärung: <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener noreferrer">whatsapp.com/legal/privacy-policy-eea</a></p>
 
     <h3>6. Übermittlung in Drittländer</h3>
-    <p>Eine Übermittlung personenbezogener Daten in Drittstaaten (außerhalb der EU/EWR) findet nur statt, soweit dies zur Vertragserfüllung erforderlich ist (z. B. Tailwind CDN, USA) und geeignete Garantien bestehen (EU-US Data Privacy Framework oder Standardvertragsklauseln gemäß Art. 46 DSGVO).</p>
+    <p>Eine automatische Übermittlung personenbezogener Daten in Drittstaaten (außerhalb der EU/EWR) findet durch diese Website <strong>nicht</strong> statt. Alle Website-Ressourcen (CSS, Bilder) werden lokal ausgeliefert. Wenn Sie aktiv auf externe Links klicken (z. B. WhatsApp, Kleinanzeigen), gelten die Datenschutzbestimmungen des jeweiligen Dienstes.</p>
 
     <h3>7. Speicherdauer</h3>
     <p>Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten (z. B. § 147 AO, § 257 HGB) bestehen. Anfragedaten ohne Vertragsabschluss werden spätestens nach 6 Monaten gelöscht.</p>
@@ -832,7 +832,7 @@
       <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
       <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
       <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
-      <li>Beschwerde bei der zuständigen Aufsichtsbehörde: <strong>Landesbeauftragter für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz</strong>, Hintere Bleiche 34, 55116 Mainz, <a href="https://www.datenschutz.rlp.de" target="_blank" rel="noopener">datenschutz.rlp.de</a></li>
+      <li>Beschwerde bei der zuständigen Aufsichtsbehörde: <strong>Landesbeauftragter für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz</strong>, Hintere Bleiche 34, 55116 Mainz, <a href="https://www.datenschutz.rlp.de" target="_blank" rel="noopener noreferrer">datenschutz.rlp.de</a></li>
     </ul>
     <p>Zur Ausübung Ihrer Rechte genügt eine formlose E-Mail an: <a href="mailto:autoankauf-david@outlook.de">autoankauf-david@outlook.de</a></p>
 
